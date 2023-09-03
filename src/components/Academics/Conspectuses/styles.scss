@@ -1,0 +1,63 @@
+#conspectuses {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+  max-width: 1344px;
+  margin: 0 auto 12rem;
+
+  .embla {
+    &Viewport {
+      overflow: hidden;
+    }
+
+    &Container {
+      display: flex;
+    }
+  }
+
+  .slide {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: auto auto;
+    row-gap: 1rem;
+    flex: 0 0 100%;
+    min-width: 0;
+
+    h2 {
+      grid-column: 1/2;
+      grid-row: 1/2;
+      align-self: end;
+    }
+
+    p {
+      grid-column: 1/2;
+      grid-row: 2/3;
+      font-size: 1.125rem;
+    }
+
+    img {
+      grid-column: 2/3;
+      grid-row: 1/3;
+      width: 100%;
+    }
+  }
+
+  button {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+
+    img {
+      scale: 0.75;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+    }
+    &.next > img {
+      rotate: 180deg;
+    }
+  }
+}

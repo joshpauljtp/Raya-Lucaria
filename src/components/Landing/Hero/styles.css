@@ -1,0 +1,63 @@
+.scroll-container {
+  height: 200dvh;
+  max-width: 100vw;
+  overflow: hidden;
+  position: fixed;
+  inset: 0;
+}
+
+.main-content {
+  display: grid;
+  place-items: center;
+  height: 100dvh;
+  position: sticky;
+  perspective: 1000px;
+  perspective-origin: center;
+}
+
+.bg-image {
+  position: absolute;
+  width: 100%;
+  height: 100dvh;
+  scale: 1.1;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  transform-origin: center;
+  background-image: url("/Raya Lucaria by newoldmax.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 120% auto;
+}
+
+.main-content .sigil-container {
+  position: relative;
+}
+
+.sigil-container img {
+  width: 395px;
+  aspect-ratio: 0.849 / 1;
+}
+
+.sigil-container > div {
+  color: white;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  translate: 0 -50%;
+  top: 50%;
+}
+
+/* @keyframes bgImageAnim {
+  0% {
+    object-position: 0% 100%;
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    object-position: 0% 15%;
+    opacity: 1;
+  }
+} */

@@ -1,0 +1,76 @@
+#spaceBackground {
+  $colors: #95bccb, #2e476e, #50557c, #555a79, #8cbbcb, #3b4151;
+  $streakColors: #180644, #a06ae1, rgb(74, 218, 225), rgb(171, 197, 198);
+
+  position: fixed;
+  z-index: -1;
+  width: 100vmax;
+  height: 100vmax;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+
+  animation: starMapRotateInit 6s ease-out forwards,
+    starMapRotate 500s linear infinite;
+
+  .star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    border-radius: 100%;
+
+    @for $i from 0 through 250 {
+      &:nth-of-type(#{$i + 1}) {
+        top: #{random(50) + random(50)} + #{"%"};
+        left: #{random(50) + random(50)} + #{"%"};
+        color: nth($colors, random(length($colors)));
+        background-color: currentColor;
+        box-shadow: 0px 0px 20px 2px currentColor;
+        animation: starSpread #{random(3) + random(3) + s} forwards ease-out;
+      }
+    }
+  }
+
+  .streak {
+    @for $j from 0 through 20 {
+      &-#{$j + 1} {
+        position: absolute;
+        translate: -50% -50%;
+        width: 25 + random(25) + random(25) + #{"%"};
+        aspect-ratio: 0.5 + random(1);
+        opacity: 0.1;
+
+        top: #{random(50) + random(50)} + #{"%"};
+        left: #{random(50) + random(50)} + #{"%"};
+        color: nth($streakColors, random(length($streakColors)));
+        animation: starSpread #{random(3) + random(3) + s} forwards ease-out;
+        background: radial-gradient(currentColor, transparent 50%);
+      }
+    }
+  }
+}
+
+@keyframes starSpread {
+  from {
+    top: 50%;
+    left: 50%;
+  }
+}
+
+@keyframes starMapRotateInit {
+  from {
+    rotate: -45deg;
+  }
+}
+
+@keyframes starMapRotate {
+  to {
+    rotate: 360deg;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+}

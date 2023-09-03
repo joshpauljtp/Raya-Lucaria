@@ -1,0 +1,252 @@
+body {
+  --bgColor: #010a11;
+  --textColor: #fffdea;
+  --visitColor: #fff2a9;
+  --sigilColor: #5ebdf2;
+  --footerBgColor: #081726;
+
+  background-color: var(--bgColor);
+  margin: 0;
+  min-height: 100dvh;
+  color: var(--textColor);
+}
+
+/* Fonts */
+
+@font-face {
+  font-family: Crimson;
+  src: url("/src/assets/fonts/CrimsonText/CrimsonText-Regular.ttf");
+}
+
+@font-face {
+  font-family: Cinzel Decorative;
+  src: url("/src/assets/fonts/CinzelDecorative/CinzelDecorative-Regular.ttf");
+}
+
+/* RESET */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  appearance: none;
+  cursor: pointer;
+}
+
+// Typography
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Cinzel Decorative";
+  font-weight: 400;
+
+  line-height: normal;
+
+  & > span {
+    font-size: 1.33em;
+  }
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.25rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+h6 {
+  font-size: 0.625rem;
+}
+
+p {
+  font-size: 1.25rem;
+}
+
+p + p {
+  margin-top: 1em;
+}
+
+*:not(h1, h2, h3, h4, h5, h6, span) {
+  font-family: "Crimson";
+}
+
+span {
+  font-family: inherit;
+}
+
+// Fixed css
+
+header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+
+  svg {
+    width: 92px;
+    height: 110px;
+    color: var(--sigilColor);
+  }
+
+  ul {
+    display: flex;
+    gap: 4rem;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    @extend h4;
+    text-shadow: 0 0 4px var(--bgColor);
+
+    &.active {
+      text-decoration: underline;
+      text-underline-offset: 0.25rem;
+    }
+  }
+}
+
+footer {
+  background-color: var(--footerBgColor);
+  padding: 2.5rem;
+
+  .content {
+    display: flex;
+    max-width: 1250px;
+    margin-inline: auto;
+  }
+
+  .logoContainer {
+    padding-right: 4rem;
+
+    svg {
+      width: 243px;
+      height: 286px;
+      margin-bottom: 1.125rem;
+    }
+  }
+
+  .textContainer {
+    flex-grow: 1;
+    border-left: 1px solid currentColor;
+    padding: 3.5rem 0 0.75rem 4rem;
+
+    ul {
+      display: grid;
+      gap: 0.875rem 3.5rem;
+      grid-template-columns: repeat(2, max-content);
+      margin-bottom: 3rem;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    a.pageLinks {
+      @extend h2;
+    }
+  }
+}
+
+#visit {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 200px;
+  max-width: 1130px;
+  margin: 8rem auto 2.5rem;
+  padding: 4rem 100px;
+  color: var(--bgColor);
+  background-color: var(--visitColor);
+
+  h2 {
+    margin-bottom: 2rem;
+  }
+
+  .imgContainer {
+    width: 407px;
+    height: 512px;
+    flex-shrink: 0;
+    position: relative;
+    padding: 34px 24px;
+    background-color: var(--textColor);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+// Reusables
+
+.heroImage {
+  max-width: 1130px;
+  margin: min(20vh, 180px) auto 0;
+  --gap: 1.5rem;
+
+  div {
+    background-color: var(--textColor);
+    padding: var(--gap);
+    margin-bottom: 0.5rem;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  h3 {
+    text-align: right;
+    padding-right: var(--gap);
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-underline {
+  text-decoration: underline;
+  text-underline-offset: 0.125rem;
+}

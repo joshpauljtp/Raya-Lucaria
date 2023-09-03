@@ -1,0 +1,26 @@
+#exploreLiurniaDescription {
+  max-width: 78ch;
+  margin: 666px auto 460px;
+  position: relative;
+
+  img {
+    position: absolute;
+    z-index: -1;
+  }
+
+  #descriptionImage1 {
+    top: 124px;
+    left: 0;
+    width: 320px;
+    height: 564px;
+    translate: -50% -100%;
+  }
+
+  #descriptionImage2 {
+    bottom: 138px;
+    right: 0;
+    width: 333px;
+    height: 416px;
+    translate: 32% 100%;
+  }
+}

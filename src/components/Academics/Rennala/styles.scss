@@ -1,0 +1,43 @@
+#academicsRennala {
+  max-width: 720px;
+  margin-inline: auto;
+  position: relative;
+
+  .rennalaImg {
+    height: 580px;
+    aspect-ratio: 197 / 290;
+  }
+
+  h1 {
+    position: absolute;
+    top: 438px;
+    left: 302px;
+    max-width: 12ch;
+    color: #fff8cb;
+  }
+
+  div {
+    --imgSize: 223px;
+    --paraOffset: calc(var(--imgSize) * 0.8);
+    --imgOffset: calc(var(--paraOffset) - var(--imgSize));
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: var(--imgSize);
+
+    img {
+      position: absolute;
+      width: var(--imgSize);
+      aspect-ratio: 1/1;
+      left: var(--imgOffset);
+    }
+
+    p {
+      padding-left: var(--paraOffset);
+    }
+  }
+
+  p + p {
+    margin-top: 1em;
+  }
+}

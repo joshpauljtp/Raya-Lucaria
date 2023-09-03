@@ -1,0 +1,42 @@
+#exploreRayaLucaria {
+  max-width: 1108px;
+  min-height: 150dvh;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h2 {
+    margin-bottom: 1.625rem;
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  li {
+    display: flex;
+    list-style: none;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      z-index: -1;
+    }
+  }
+
+  h3 {
+    position: absolute;
+    bottom: 145px;
+    width: 100%;
+    text-align: center;
+  }
+
+  img {
+    width: 250px;
+    height: 450px;
+  }
+}
