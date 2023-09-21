@@ -4,7 +4,7 @@ import Sigil from "./Sigil";
 
 function Navbar() {
   return (
-    <header>
+    <header className="headerActive">
       <Link to="/">
         <Sigil />
       </Link>

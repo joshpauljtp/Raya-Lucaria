@@ -1,9 +1,7 @@
 .scroll-container {
-  height: 200dvh;
-  max-width: 100vw;
   overflow: hidden;
-  position: fixed;
-  inset: 0;
+  width: 100vw;
+  height: 100vh;
 }
 
 .main-content {
@@ -34,30 +32,17 @@
   position: relative;
 }
 
-.sigil-container img {
+.sigil-container svg {
   width: 395px;
   aspect-ratio: 0.849 / 1;
+  color: var(--sigilColor);
 }
 
 .sigil-container > div {
   color: white;
   position: absolute;
   text-align: center;
-  width: 100%;
-  translate: 0 -50%;
+  width: max-content;
+  translate: -50% -50%;
   top: 50%;
 }
-
-/* @keyframes bgImageAnim {
-  0% {
-    object-position: 0% 100%;
-    opacity: 0;
-  }
-  30% {
-    opacity: 0;
-  }
-  100% {
-    object-position: 0% 15%;
-    opacity: 1;
-  }
-} */

@@ -1,0 +1,20 @@
+#highlights {
+  max-width: 1130px;
+  margin: 10rem auto 0;
+
+  img {
+    width: 850px;
+  }
+
+  div {
+    width: 50ch;
+    font-size: 1.25rem;
+    margin-left: auto;
+    position: relative;
+    bottom: 10rem;
+
+    ul {
+      padding-left: 1em;
+    }
+  }
+}

@@ -1,12 +1,20 @@
 import Heading from "@/components/reusables/Heading";
-import "./styles.css";
-import Sigil from "@assets/Sigil.svg";
+import "./styles.scss";
 import { useEffect, useRef, useState } from "react";
+import Sigil from "@/components/reusables/Sigil";
 
-function Hero() {
+function Hero({
+  heroFinished,
+  setHeroFinished,
+  isVisible,
+}: {
+  heroFinished: any;
+  setHeroFinished: any;
+  isVisible: any;
+}) {
   const scrollRef = useRef<HTMLElement>(null);
 
-  const [bgImageVisible, toggleBgImageVisible] = useState<boolean>(true);
+  const [bgImageVisible, toggleBgImageVisible] = useState<boolean | null>(null);
 
   const bgImageAnimations = {
     fadeIn: [
@@ -31,10 +39,8 @@ function Hero() {
 
   useEffect(() => {
     const onScroll = () => {
-      const { scrollY } = window;
-
-      // If scrollEnd > (innerHeight * 2), then hide scrollRef
-      toggleBgImageVisible(!(scrollY > 0));
+      const { scrollY, innerHeight } = window;
+      toggleBgImageVisible(!(scrollY > innerHeight * 5));
     };
 
     document.addEventListener("scroll", onScroll);
@@ -49,56 +55,68 @@ function Hero() {
         ".bg-image"
       ) as HTMLElement;
 
-      const sigilEle = scrollRef?.current?.querySelector(".sigil-container");
-      const sigilTitle = sigilEle?.querySelector("h1");
+      const sigilEle = scrollRef?.current?.querySelector(
+        ".sigil-container > svg"
+      );
+      const sigilTitle = scrollRef?.current?.querySelector(".text-container");
 
-      if (bgImageVisible) {
-        // First, fade bgImage in and zoom out
-        bgImage?.animate(bgImageAnimations.fadeIn, {
-          duration: 9000,
-          easing: "cubic-bezier(0.215, 0.61, 0.355, 1)",
-          fill: "forwards",
-        });
-      } else {
-        // First fade bgImage out
-        bgImage?.animate(bgImageAnimations.fadeOut, {
-          duration: 1200,
-          easing: "cubic-bezier(0.215, 0.61, 0.355, 1)",
-          fill: "forwards",
-        });
-
-        // Then hide Sigil title
-        sigilTitle?.animate(
-          [
-            { opacity: 1 },
-            {
-              opacity: 0,
-            },
-          ],
-          { duration: 400, delay: 1200, fill: "forwards" }
-        );
-
-        // Then move Sigil image
-
-        sigilEle?.animate(
-          [
-            { transform: "translate3d(0,0,0px)" },
-            { opacity: 1, offset: 0.6 },
-            {
-              opacity: 0,
-              transform: "translate3d(0,0,1000px)",
-            },
-          ],
-          {
-            duration: 1000,
-            delay: 1600,
-            easing: "ease-in",
+      if (!heroFinished) {
+        if (bgImageVisible && isVisible) {
+          // First, fade bgImage in and zoom out
+          bgImage?.animate(bgImageAnimations.fadeIn, {
+            duration: 9000,
+            easing: "cubic-bezier(0.215, 0.61, 0.355, 1)",
             fill: "forwards",
-          }
-        );
+          });
+        } else if (bgImageVisible === false) {
+          // First fade bgImage out
+          bgImage?.animate(bgImageAnimations.fadeOut, {
+            duration: 2000,
+            easing: "cubic-bezier(0.215, 0.61, 0.355, 1)",
+            fill: "forwards",
+          });
+
+          // Then hide Sigil title
+          sigilTitle?.animate(
+            [
+              { opacity: 1 },
+              {
+                opacity: 0,
+              },
+            ],
+            { duration: 400, delay: 2000, fill: "forwards" }
+          );
+
+          // Then activate star spread and nav
+
+          sigilEle?.animate(
+            [
+              { filter: "drop-shadow(0px 0px 0px white)" },
+              {
+                opacity: 1,
+                filter: "drop-shadow(0px 0px 10px white)",
+                offset: 0.7,
+              },
+              {
+                opacity: 0,
+                filter: "drop-shadow(0px 0px 0px white)",
+              },
+            ],
+            {
+              duration: 800,
+              delay: 1600,
+              easing: "ease-in-out",
+              fill: "forwards",
+            }
+          );
+
+          setTimeout(() => {
+            setHeroFinished(true);
+          }, 3200);
+        }
       }
     }
-  }, [bgImageVisible]);
+  }, [bgImageVisible, isVisible, heroFinished]);
 
   return (
     <section
@@ -114,7 +132,7 @@ function Hero() {
         const xDeltaFromCenter = (clientX - innerWidth / 2) / innerWidth;
         const yDeltaFromCenter = (clientY - innerHeight / 2) / innerHeight;
 
-        if (bgImage) {
+        if (bgImage && isVisible) {
           bgImage.animate(
             {
               translate: `-${50 + xDeltaFromCenter * 10}% -${
@@ -130,8 +148,8 @@ function Hero() {
         <div className="bg-image"></div>
 
         <div className="sigil-container">
-          <img src={Sigil} alt="" />
-          <div>
+          <Sigil />
+          <div className="text-container">
             <Heading level={2} text="The Academy of" />
             <Heading level={1} text="Raya Lucaria" />
           </div>

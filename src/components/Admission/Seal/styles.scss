@@ -1,0 +1,22 @@
+#academySeal {
+  //   background-color: red;
+
+  div {
+    position: relative;
+    max-width: 1130px;
+    margin-inline: auto;
+
+    img {
+      width: 100%;
+    }
+
+    p {
+      position: absolute;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      max-width: 40ch;
+      text-align: right;
+      font-size: 0.875rem;
+    }
+  }
+}

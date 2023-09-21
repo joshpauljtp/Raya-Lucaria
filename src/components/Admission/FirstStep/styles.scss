@@ -1,0 +1,17 @@
+#firstStep {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1000px;
+  margin-inline: auto;
+
+  img {
+    width: 1000px;
+  }
+
+  p {
+    position: relative;
+    bottom: 8rem;
+    max-width: 520px;
+  }
+}

@@ -1,7 +1,7 @@
 body {
   --bgColor: #010a11;
   --textColor: #fffdea;
-  --visitColor: #fff2a9;
+  --visitColor: hsla(248.6, 10%, 41%, 0.31);
   --sigilColor: #5ebdf2;
   --footerBgColor: #081726;
 
@@ -143,6 +143,26 @@ header {
       text-underline-offset: 0.25rem;
     }
   }
+
+  // First, elements are invisible
+  svg,
+  li {
+    opacity: 0;
+  }
+
+  // then, when headerActive, show elements in a staggered manner
+  &.headerActive {
+    svg,
+    li {
+      animation: fadeIn 250ms forwards;
+    }
+
+    @for $i from 1 through 4 {
+      li:nth-of-type(#{$i}) {
+        animation-delay: #{250 * $i}ms;
+      }
+    }
+  }
 }
 
 footer {
@@ -195,7 +215,7 @@ footer {
   max-width: 1130px;
   margin: 8rem auto 2.5rem;
   padding: 4rem 100px;
-  color: var(--bgColor);
+  color: var(--textColor);
   background-color: var(--visitColor);
 
   h2 {
@@ -249,4 +269,38 @@ footer {
 .text-underline {
   text-decoration: underline;
   text-underline-offset: 0.125rem;
+}
+
+// Landing page
+
+#landingPageContent {
+  opacity: 0;
+
+  &.landingFadeIn {
+    animation: fadeIn 750ms 1000ms forwards;
+  }
+
+  &.landingFadeOut {
+    animation: fadeOut 400ms forwards;
+  }
+}
+
+// Base animations
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
