@@ -1,6 +1,5 @@
 import Heading from "@/components/reusables/Heading";
 import "./styles.scss";
-import WelcomeImg from "@/assets/images/Landing/Welcome.png";
 
 function Welcome() {
   return (
