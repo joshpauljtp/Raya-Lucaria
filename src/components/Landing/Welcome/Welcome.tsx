@@ -14,7 +14,8 @@ function Welcome() {
           perusal.
         </p>
       </div>
-      <img src={WelcomeImg} alt="" />
+      <div className="image"></div>
+      {/* <img src={WelcomeImg} alt="" /> */}
     </section>
   );
 }

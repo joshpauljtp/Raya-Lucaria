@@ -12,11 +12,32 @@
     width: 900px;
   }
 
+  .image {
+    width: 900px;
+    aspect-ratio: 720 / 433;
+    background-image: url("/Welcome.png");
+    background-repeat: no-repeat;
+    background-size: 250%;
+    background-position: 100% 50%;
+    animation: welcomeImgAnim 7000ms 500ms forwards ease-out;
+  }
+
   .textContainer {
     color: var(--textColor);
     position: absolute;
     bottom: 11rem;
     left: 0;
     max-width: 60ch;
+  }
+}
+
+@keyframes welcomeImgAnim {
+  from {
+    background-size: 250%;
+    background-position: 100% 50%;
+  }
+  to {
+    background-size: 100%;
+    background-position: 50% 50%;
   }
 }

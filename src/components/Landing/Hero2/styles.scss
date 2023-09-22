@@ -58,7 +58,19 @@ aside {
         flex-direction: row;
 
         img {
+          position: relative;
+          z-index: -1;
+
           width: 250px;
+
+          &:first-of-type {
+            left: 42px;
+            bottom: 52px;
+          }
+          &:last-of-type {
+            right: 42px;
+            top: 52px;
+          }
         }
 
         p {

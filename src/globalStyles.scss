@@ -246,6 +246,8 @@ footer {
   --gap: 1.5rem;
 
   div {
+    display: grid;
+    place-items: center;
     background-color: var(--textColor);
     padding: var(--gap);
     margin-bottom: 0.5rem;
