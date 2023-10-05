@@ -129,12 +129,24 @@ function Hero({
             heroFinished ? "fadeOut" : "fadeIn"
           }`}
         >
+          {[...new Array(6)]?.map((_, i) => (
+            <div
+              className="divider"
+              key={`divider-${i}`}
+              style={{
+                background:
+                  scrollPos > 0 && scrollPos >= window.innerHeight * i
+                    ? "var(--textColor)"
+                    : "var(--visitColor)",
+              }}
+            />
+          ))}
           <div
             className="scrollProgressBar"
             style={{
               width: (scrollPos / (window.innerHeight * 5)) * 200,
             }}
-          ></div>
+          />
         </div>
       </div>
     </aside>

@@ -84,7 +84,7 @@ function Hero({
                 opacity: 0,
               },
             ],
-            { duration: 400, delay: 2000, fill: "forwards" }
+            { duration: 400, delay: 1200, fill: "forwards" }
           );
 
           // Then activate star spread and nav
@@ -104,7 +104,7 @@ function Hero({
             ],
             {
               duration: 800,
-              delay: 1600,
+              delay: 1800,
               easing: "ease-in-out",
               fill: "forwards",
             }
@@ -112,7 +112,7 @@ function Hero({
 
           setTimeout(() => {
             setHeroFinished(true);
-          }, 3200);
+          }, 2600);
         }
       }
     }

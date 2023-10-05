@@ -1,11 +1,24 @@
+import { useEffect, useRef, useState } from "react";
 import "./styles.scss";
-import HighlightsImg from "@assets/images/Campus/Academy.jpg";
 
 function Highlights() {
+  const [isVisible, setIsVisible] = useState<boolean>(false);
+  const imgRef = useRef(null);
+
+  useEffect(() => {
+    if (imgRef?.current) {
+      let observer = new IntersectionObserver(() => setIsVisible(true));
+      observer.observe(imgRef.current);
+    }
+  }, [imgRef]);
+
   return (
     <section id="highlights">
-      <img src={HighlightsImg} alt="" />
-      <div>
+      <div
+        className={`highlightsImg ${isVisible ? "active" : ""}`}
+        ref={imgRef}
+      ></div>
+      <div className="textContent">
         <p>
           As a sorcerer of Raya Lucaria, you can enjoy the various facilities
           and amenities of the academy.{" "}

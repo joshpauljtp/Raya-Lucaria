@@ -99,13 +99,24 @@ aside {
     }
 
     &BarContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
       width: 100%;
       height: 2px;
       background-color: var(--visitColor);
     }
     &Bar {
+      position: absolute;
+      inset: 0;
       height: 100%;
       background-color: var(--textColor);
+    }
+
+    & .divider {
+      width: 2px;
+      height: 8px;
     }
   }
 

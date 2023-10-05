@@ -16,10 +16,12 @@
     width: 900px;
     aspect-ratio: 720 / 433;
     background-image: url("/Welcome.png");
+    background-color: var(--visitColor);
     background-repeat: no-repeat;
     background-size: 250%;
     background-position: 100% 50%;
-    animation: welcomeImgAnim 7000ms 500ms forwards ease-out;
+    animation: welcomeImgAnim 9000ms 800ms forwards
+      cubic-bezier(0.215, 0.61, 0.355, 1);
   }
 
   .textContainer {

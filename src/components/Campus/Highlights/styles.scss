@@ -2,11 +2,20 @@
   max-width: 1130px;
   margin: 10rem auto 0;
 
-  img {
+  .highlightsImg {
     width: 850px;
+    aspect-ratio: 3/2;
+    background-image: url("/Academy.jpg");
+    background-color: var(--visitColor);
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+
+    &.active {
+      animation: highlightsImgAnim 8s forwards ease-out;
+    }
   }
 
-  div {
+  .textContent {
     width: 50ch;
     font-size: 1.25rem;
     margin-left: auto;
@@ -16,5 +25,16 @@
     ul {
       padding-left: 1em;
     }
+  }
+}
+
+@keyframes highlightsImgAnim {
+  from {
+    background-position-y: 0%;
+    background-size: 200%;
+  }
+  to {
+    background-position-y: 50%;
+    background-size: 100%;
   }
 }
