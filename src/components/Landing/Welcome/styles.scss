@@ -8,38 +8,42 @@
   margin-inline: auto;
   position: relative;
 
-  img {
-    width: 900px;
-  }
-
-  .image {
-    width: 900px;
-    aspect-ratio: 720 / 433;
-    background-image: url("/Welcome.png");
-    background-color: var(--visitColor);
-    background-repeat: no-repeat;
-    background-size: 250%;
-    background-position: 100% 50%;
-    animation: welcomeImgAnim 9000ms 800ms forwards
-      cubic-bezier(0.215, 0.61, 0.355, 1);
-  }
-
   .textContainer {
     color: var(--textColor);
     position: absolute;
-    bottom: 11rem;
+    top: 46%;
     left: 0;
     max-width: 60ch;
+    z-index: 2;
+    translate: 0 50%;
+  }
+
+  .imgContainer {
+    width: 900px;
+    aspect-ratio: 720 / 433;
+    background-color: var(--visitColor);
+    position: relative;
+    overflow: hidden;
+
+    & > img {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      translate: 0 -50%;
+      animation: welcomeImgAnim 9000ms 800ms forwards ease-out;
+    }
   }
 }
 
 @keyframes welcomeImgAnim {
   from {
-    background-size: 250%;
-    background-position: 100% 50%;
+    width: 250%;
+    right: 0;
+    translate: 0 -50%;
   }
   to {
-    background-size: 100%;
-    background-position: 50% 50%;
+    width: 100%;
+    right: 50%;
+    translate: 50% -50%;
   }
 }

@@ -14,9 +14,13 @@ function LandingPage() {
     heroFinished && sessionStorage.setItem("heroFinished", heroFinished + "");
   }, [heroFinished]);
 
+  if (!heroFinished)
+    return (
+      <Hero heroFinished={heroFinished} setHeroFinished={setHeroFinished} />
+    );
+
   return (
     <>
-      <Hero heroFinished={heroFinished} setHeroFinished={setHeroFinished} />
       <main
         id="landingPageContent"
         className={heroFinished ? "landingFadeIn" : "landingFadeOut"}

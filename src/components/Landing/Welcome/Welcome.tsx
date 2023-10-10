@@ -1,5 +1,6 @@
 import Heading from "@/components/reusables/Heading";
 import "./styles.scss";
+import WelcomeImg from "@assets/images/Landing/Welcome.png";
 
 function Welcome() {
   return (
@@ -13,8 +14,9 @@ function Welcome() {
           perusal.
         </p>
       </div>
-      <div className="image"></div>
-      {/* <img src={WelcomeImg} alt="" /> */}
+      <div className="imgContainer">
+        <img src={WelcomeImg} alt="" />
+      </div>
     </section>
   );
 }
