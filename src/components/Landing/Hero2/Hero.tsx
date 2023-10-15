@@ -80,7 +80,7 @@ function Hero({
           "spaceBackground"
         ) as HTMLElement;
         spaceBG.className = "";
-      }, 8000);
+      }, 2000);
     }
 
     // Lock intro state when reached
