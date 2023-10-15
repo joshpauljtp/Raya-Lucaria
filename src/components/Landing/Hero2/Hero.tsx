@@ -3,7 +3,6 @@ import StargazerHeirloom from "@/assets/images/Landing/Stargazer.png";
 import Sigil from "@/components/reusables/Sigil";
 import "./styles.scss";
 import HeroBase from "../Hero/Hero";
-import Heading from "@/components/reusables/Heading";
 import Lusat from "@/assets/images/Landing/Lusat.webp";
 import Azur from "@/assets/images/Landing/Azur.webp";
 
@@ -21,11 +20,15 @@ function Hero({
   const STEPS = [
     <>
       <img src={StargazerHeirloom} alt="" id="stargazer" />
-      <Heading
+      {/* <Heading
         level={4}
         text="Long ago, an astrologer looked up to the sky, and glimpsed the Primeval
         Current in the sky above."
-      />
+      /> */}
+      <p>
+        Long ago, an astrologer looked up to the sky, and glimpsed the Primeval
+        Current in the sky above.
+      </p>
     </>,
     <p>
       Then miraculously, what they saw in the cosmos manifested in reality, and
@@ -77,27 +80,12 @@ function Hero({
           "spaceBackground"
         ) as HTMLElement;
         spaceBG.className = "";
-      }, 2000);
+      }, 8000);
     }
 
     // Lock intro state when reached
     activeIndex === 4 && setIntroFinished(true);
   }, [activeIndex]);
-
-  useEffect(() => {
-    const spaceBG = document.getElementById("spaceBackground") as HTMLElement;
-    const header = document.getElementsByTagName("header")[0];
-
-    if (!heroFinished) {
-      header.className = "";
-      spaceBG.className = "inactive";
-    } else {
-      header.className = "headerActive";
-      window.scrollTo({
-        top: 0,
-      });
-    }
-  }, [heroFinished]);
 
   if (heroFinished) return <></>;
   return (

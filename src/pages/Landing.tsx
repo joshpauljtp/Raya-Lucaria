@@ -11,7 +11,23 @@ function LandingPage() {
   );
 
   useEffect(() => {
-    heroFinished && sessionStorage.setItem("heroFinished", heroFinished + "");
+    const spaceBG = document.getElementById("spaceBackground") as HTMLElement;
+    const header = document.getElementsByTagName("header")[0];
+    const footer = document.getElementsByTagName("footer")[0];
+
+    if (!heroFinished) {
+      header.className = "";
+      footer.className = "";
+      spaceBG.className = "inactive";
+    } else {
+      sessionStorage.setItem("heroFinished", heroFinished + "");
+
+      header.className = "headerActive";
+      footer.className = "footerActive";
+      window.scrollTo({
+        top: 0,
+      });
+    }
   }, [heroFinished]);
 
   if (!heroFinished)

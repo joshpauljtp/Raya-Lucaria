@@ -168,6 +168,7 @@ header {
 footer {
   background-color: var(--footerBgColor);
   padding: 2.5rem;
+  opacity: 0;
 
   .content {
     display: flex;
@@ -204,6 +205,10 @@ footer {
     a.pageLinks {
       @extend h2;
     }
+  }
+
+  &.footerActive {
+    animation: fadeIn 400ms forwards;
   }
 }
 

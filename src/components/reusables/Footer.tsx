@@ -5,7 +5,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer>
+    <footer className="footerActive">
       <div className="content">
         <div className="logoContainer">
           <Sigil />
