@@ -1,8 +1,8 @@
 #conspectuses {
   display: flex;
   align-items: center;
-  gap: 3.5rem;
-  max-width: 1344px;
+  gap: 3rem;
+  max-width: 1200px;
   margin: 0 auto 12rem;
 
   .embla {
@@ -22,6 +22,7 @@
     row-gap: 1rem;
     flex: 0 0 100%;
     min-width: 0;
+    padding-inline: 0.5rem;
 
     h2 {
       grid-column: 1/2;
