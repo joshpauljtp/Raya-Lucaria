@@ -5,7 +5,7 @@ import Sigil from "./Sigil";
 function Navbar() {
   return (
     <header className="headerActive">
-      <Link to="/">
+      <Link to="/" state={{ noIntro: true }}>
         <Sigil />
       </Link>
       <nav>
