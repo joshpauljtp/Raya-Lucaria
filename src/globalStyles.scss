@@ -134,13 +134,27 @@ header {
     list-style: none;
   }
 
-  a {
+  nav a {
     @extend h4;
-    text-shadow: 0 0 4px var(--bgColor);
+    position: relative;
+    text-shadow: 0 0 2px var(--bgColor);
 
-    &.active {
-      text-decoration: underline;
-      text-underline-offset: 0.25rem;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 2px;
+      left: 50%;
+      translate: -50% 0;
+      width: 0;
+      height: 1px;
+      background-color: currentColor;
+      z-index: -1;
+      transition: width 250ms;
+    }
+
+    &.active::before,
+    &:not(.active):hover::before {
+      width: 100%;
     }
   }
 
