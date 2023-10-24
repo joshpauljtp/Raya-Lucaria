@@ -250,17 +250,15 @@ footer {
   margin: min(20vh, 180px) auto 0;
   --gap: 1.5rem;
 
-  div {
-    display: grid;
-    place-items: center;
-    background-color: var(--textColor);
-    padding: var(--gap);
+  img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1619 / 678;
+    object-fit: cover;
+    background-color: var(--visitColor);
+    border: var(--gap) solid var(--textColor);
+    box-sizing: border-box;
     margin-bottom: 0.5rem;
-
-    img {
-      width: 100%;
-      object-fit: cover;
-    }
   }
 
   h3 {

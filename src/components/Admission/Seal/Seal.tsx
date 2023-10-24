@@ -4,13 +4,11 @@ import "./styles.scss";
 function AcademySeal() {
   return (
     <section id="academySeal">
-      <div>
-        <img src={AcademySealImg} alt="" />
-        <p>
-          *Note: Gates may be shut during times of war, or the shattering of the
-          Elden Ring
-        </p>
-      </div>
+      <img src={AcademySealImg} alt="" />
+      <p>
+        *Note: Gates may be shut during times of war, or the shattering of the
+        Elden Ring
+      </p>
     </section>
   );
 }
