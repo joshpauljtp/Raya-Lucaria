@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Heading from "./Heading";
 
 function HeroImage({
@@ -7,9 +8,18 @@ function HeroImage({
   imgSrc: string;
   title: string;
 }) {
+  const [imgLoading, setImgLoading] = useState<boolean>(true);
+
   return (
     <section className="heroImage">
-      <img src={imgSrc} alt="" />
+      <img
+        className={imgLoading ? "loading" : ""}
+        src={imgSrc}
+        alt={`Hero image depicting ${title}`}
+        onLoad={() => {
+          setImgLoading(false);
+        }}
+      />
       <Heading level={3} text={title} />
     </section>
   );
