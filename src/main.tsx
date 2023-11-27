@@ -5,6 +5,7 @@ import LandingPage from "./pages/Landing.tsx";
 import "./globalStyles.scss";
 import Layout from "./components/reusables/Layout.tsx";
 import { NAV_LINKS } from "./constants.tsx";
+import { Analytics } from "@vercel/analytics/react";
 
 const router = createBrowserRouter([
   {
@@ -23,5 +24,6 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <RouterProvider router={router} />
+    <Analytics />
   </React.StrictMode>
 );
