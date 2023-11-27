@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FOOTER_SOURCES, NAV_LINKS } from "@/constants";
+import { FOOTER_SOURCES, NAV_LINKS, SOCIAL_LIST } from "@/constants";
 import Sigil from "./Sigil";
 import React from "react";
 
@@ -9,7 +9,7 @@ function Footer() {
       <div className="content">
         <div className="logoContainer">
           <Sigil />
-          <h6 className="text-center">Copyright Blah Blah Blah 2023</h6>
+          <h6 className="text-center">Fake Copyright Text 2023</h6>
         </div>
         <div className="textContainer">
           <ul>
@@ -31,6 +31,7 @@ function Footer() {
                   href={link}
                   rel="noreferrer noopener"
                   className="text-underline"
+                  target="_blank"
                 >
                   {name}
                 </a>
@@ -38,6 +39,24 @@ function Footer() {
               </React.Fragment>
             ))}
             and any others who I might have forgotten.
+          </p>
+
+          <p>
+            Created by Joshua Thomas Paul.
+            <ul>
+              {SOCIAL_LIST.map(({ name, link }) => (
+                <li>
+                  <a
+                    className="text-underline"
+                    href={link}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    {name}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </p>
         </div>
       </div>

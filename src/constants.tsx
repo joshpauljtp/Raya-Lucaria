@@ -84,3 +84,22 @@ export const FOOTER_SOURCES = [
     link: "https://www.youtube.com/@ratatoskr6324",
   },
 ];
+
+export const SOCIAL_LIST = [
+  {
+    name: "Email",
+    link: "mailto:joshpauljtp@gmail.com",
+  },
+  {
+    name: "LinkedIn",
+    link: "https://www.linkedin.com/in/joshpauljtp/",
+  },
+  {
+    name: "Github",
+    link: "https://github.com/JoshTPaul/",
+  },
+  {
+    name: "Codepen",
+    link: "https://codepen.io/joshtpaul",
+  },
+];

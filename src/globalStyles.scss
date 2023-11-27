@@ -219,6 +219,22 @@ footer {
     a.pageLinks {
       @extend h2;
     }
+
+    p:first-of-type {
+      font-size: 1rem;
+    }
+
+    p + p {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+
+      ul {
+        display: flex;
+        gap: 0.75rem;
+        margin-bottom: 0;
+      }
+    }
   }
 
   &.footerActive {
