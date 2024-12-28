@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
-import { FOOTER_SOURCES, NAV_LINKS, SOCIAL_LIST } from "@/constants";
-import Sigil from "./Sigil";
+import { FOOTER_SOURCES, NAV_LINKS } from "@/constants";
 import React from "react";
+import { Link } from "react-router-dom";
+import Sigil from "./Sigil";
 
 function Footer() {
   return (
@@ -42,8 +42,12 @@ function Footer() {
           </p>
 
           <p>
-            Created by Joshua Thomas Paul.
-            <ul>
+            Created by{" "}
+            <a className="text-underline" href="https://metamatic.dev">
+              Joshua Thomas Paul
+            </a>
+            .
+            {/* <ul>
               {SOCIAL_LIST.map(({ name, link }) => (
                 <li>
                   <a
@@ -56,7 +60,7 @@ function Footer() {
                   </a>
                 </li>
               ))}
-            </ul>
+            </ul> */}
           </p>
         </div>
       </div>
