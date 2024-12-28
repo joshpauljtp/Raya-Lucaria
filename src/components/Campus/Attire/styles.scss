@@ -30,4 +30,8 @@
   p {
     max-width: 55ch;
   }
+
+  @media screen and (max-width: 800px) {
+    padding: 1rem;
+  }
 }

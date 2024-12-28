@@ -33,6 +33,27 @@
       animation: welcomeImgAnim 9000ms 800ms forwards ease-out;
     }
   }
+
+  @media screen and (max-width: 800px) {
+    padding-inline: 1rem;
+    padding-top: 10rem;
+    min-height: unset;
+    flex-wrap: wrap;
+    justify-content: unset;
+    gap: 1rem;
+    margin-bottom: 5rem;
+
+    .textContainer {
+      position: static;
+      translate: unset;
+      width: 100%;
+    }
+
+    .imgContainer {
+      order: -1;
+      width: 100%;
+    }
+  }
 }
 
 @keyframes welcomeImgAnim {

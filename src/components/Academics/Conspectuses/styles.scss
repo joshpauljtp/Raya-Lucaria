@@ -61,4 +61,21 @@
       rotate: 180deg;
     }
   }
+
+  @media screen and (max-width: 800px) {
+    gap: 1rem;
+
+    img {
+      width: 2rem;
+    }
+
+    .slide {
+      display: flex;
+      flex-direction: column;
+
+      img {
+        order: -1;
+      }
+    }
+  }
 }

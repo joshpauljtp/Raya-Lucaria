@@ -1,11 +1,11 @@
-import "./styles.scss";
+import Heading from "@/components/reusables/Heading";
 import AcademicsImg from "@assets/images/Landing/Explore-Academics.png";
+import AdmissionImg from "@assets/images/Landing/Explore-Admission.png";
 import CampusImg from "@assets/images/Landing/Explore-Campus.png";
 import LocaleImg from "@assets/images/Landing/Explore-Locale.png";
-import AdmissionImg from "@assets/images/Landing/Explore-Admission.png";
-import Heading from "@/components/reusables/Heading";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import "./styles.scss";
 
 function Explore() {
   const sectionRef = useRef(null);
@@ -46,6 +46,12 @@ function Explore() {
 
   useEffect(() => {
     sectionRef.current && observer.observe(sectionRef.current);
+    function updateSize() {
+      setActive(window.innerWidth < 800);
+    }
+    window.addEventListener("resize", updateSize);
+    updateSize();
+    return () => window.removeEventListener("resize", updateSize);
   }, [sectionRef]);
 
   return (

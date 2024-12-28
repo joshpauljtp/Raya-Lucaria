@@ -27,4 +27,20 @@
   p {
     max-width: 565px;
   }
+
+  @media screen and (max-width: 800px) {
+    padding: 1rem;
+
+    .imgContainer img {
+      width: 100%;
+      height: unset;
+      aspect-ratio: 565 / 628;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      left: 65%;
+      bottom: 38%;
+    }
+  }
 }

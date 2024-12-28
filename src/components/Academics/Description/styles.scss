@@ -3,4 +3,9 @@
   max-width: 640px;
   margin-inline: auto;
   font-size: 1.25rem;
+
+  @media screen and (max-width: 800px) {
+    margin-top: 1rem;
+    padding: 1rem;
+  }
 }

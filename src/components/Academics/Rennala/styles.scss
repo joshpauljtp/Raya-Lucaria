@@ -40,4 +40,21 @@
   p + p {
     margin-top: 1em;
   }
+
+  @media screen and (max-width: 800px) {
+    padding: 1rem;
+
+    .rennalaImg {
+      width: 80%;
+      height: unset;
+    }
+
+    h1 {
+      position: relative;
+      top: 0;
+      left: 0;
+      // font-size: 1.75rem;
+      max-width: unset;
+    }
+  }
 }

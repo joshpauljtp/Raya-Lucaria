@@ -1,7 +1,7 @@
 import Heading from "@/components/reusables/Heading";
-import "./styles.scss";
-import { useEffect, useRef, useState } from "react";
 import Sigil from "@/components/reusables/Sigil";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import "./styles.scss";
 
 function Hero({
   heroFinished,
@@ -16,20 +16,31 @@ function Hero({
 
   const [bgImageVisible, toggleBgImageVisible] = useState<boolean | null>(null);
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useLayoutEffect(() => {
+    function updateSize() {
+      setIsMobile(window.innerWidth < 800);
+    }
+    window.addEventListener("resize", updateSize);
+    updateSize();
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
+
   const bgImageAnimations = {
     fadeIn: [
       {
-        backgroundSize: "200% auto",
+        backgroundSize: isMobile ? "cover" : "200% auto",
         backgroundPosition: "50% 100%",
         opacity: 0,
       },
       {
-        backgroundSize: "200% auto",
+        backgroundSize: isMobile ? "cover" : "200% auto",
         opacity: 0,
         offset: 0.3,
       },
       {
-        backgroundSize: "100% auto",
+        backgroundSize: isMobile ? "cover" : "100% auto",
         backgroundPosition: "50% 20%",
         opacity: 1,
       },

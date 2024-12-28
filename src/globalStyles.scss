@@ -177,6 +177,37 @@ header {
       }
     }
   }
+
+  @media screen and (max-width: 800px) {
+    padding: 1rem;
+    nav {
+      transition: opacity 200ms;
+    }
+    nav.closed {
+      opacity: 0;
+      height: 0;
+    }
+    nav.open {
+      opacity: 1;
+    }
+    nav {
+      position: fixed;
+      z-index: -1;
+      height: 100dvh;
+      inset: 0;
+      background: var(--visitColor);
+      backdrop-filter: blur(8px);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      ul {
+        padding: 1rem;
+        gap: 2rem;
+        flex-direction: column;
+      }
+    }
+  }
 }
 
 footer {
@@ -240,6 +271,35 @@ footer {
   &.footerActive {
     animation: fadeIn 400ms forwards;
   }
+
+  @media screen and (max-width: 800px) {
+    padding: 1rem;
+
+    .content {
+      flex-direction: column;
+      padding: 0;
+    }
+
+    .logoContainer {
+      padding: 0;
+      width: 243px;
+    }
+
+    .textContainer {
+      padding: 0;
+      border-left: none;
+      margin-top: 1rem;
+
+      ul {
+        grid-template-columns: 1fr;
+        margin-bottom: 2rem;
+      }
+    }
+
+    .textContainer p + p {
+      display: block;
+    }
+  }
 }
 
 #visit {
@@ -271,6 +331,16 @@ footer {
       object-fit: cover;
     }
   }
+
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 2rem;
+  }
+
+  .imgContainer {
+    width: auto;
+  }
 }
 
 // Reusables
@@ -280,6 +350,7 @@ footer {
 }
 
 .heroImage {
+  padding: 1rem;
   max-width: 1130px;
   margin: min(20vh, 180px) auto 0;
   --gap: 1.5rem;
@@ -298,6 +369,14 @@ footer {
   h3 {
     text-align: right;
     padding-right: var(--gap);
+  }
+
+  @media screen and (max-width: 800px) {
+    --gap: 0.5rem;
+
+    img {
+      aspect-ratio: 1619 / 900;
+    }
   }
 }
 

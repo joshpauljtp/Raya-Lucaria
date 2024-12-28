@@ -26,6 +26,20 @@
       padding-left: 1em;
     }
   }
+  @media screen and (max-width: 800px) {
+    margin-top: 1rem;
+    padding: 1rem;
+
+    .highlightsImg {
+      width: 100%;
+    }
+
+    .textContent {
+      margin-top: 0.5rem;
+      bottom: 0;
+      width: 100%;
+    }
+  }
 }
 
 @keyframes highlightsImgAnim {

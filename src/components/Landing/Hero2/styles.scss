@@ -127,4 +127,19 @@ aside {
   .fadeIn {
     animation: fadeIn 250ms forwards;
   }
+
+  @media screen and (max-width: 800px) {
+    .dynamicContent.content-3 img:first-of-type {
+      scale: 0.5;
+      transform-origin: left bottom;
+      left: -2rem;
+      top: 2rem;
+    }
+    .dynamicContent.content-3 img:last-of-type {
+      scale: 0.5;
+      transform-origin: right top;
+      left: 2rem;
+      top: -2rem;
+    }
+  }
 }

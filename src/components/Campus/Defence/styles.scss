@@ -25,4 +25,27 @@
       max-width: 50ch;
     }
   }
+
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+    background: linear-gradient(
+      to top,
+      transparent 0,
+      #0f0f0f 4rem calc(100dvh + 4rem),
+      transparent
+    );
+
+    img {
+      width: 100%;
+      height: initial;
+    }
+
+    div {
+      text-align: unset;
+
+      p {
+        max-width: unset;
+      }
+    }
+  }
 }
