@@ -46,7 +46,6 @@ function Footer() {
             <a className="text-underline" href="https://metamatic.dev">
               Joshua Thomas Paul
             </a>
-            .
             {/* <ul>
               {SOCIAL_LIST.map(({ name, link }) => (
                 <li>
